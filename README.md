@@ -1,1 +1,1 @@
-# diary-backend
+# scribbler-data
