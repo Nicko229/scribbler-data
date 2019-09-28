@@ -7,7 +7,10 @@ console.log("dotenv", process.env.MONGODB_USERNAME)
 const connectDB = async () => {
 
   try {
-    await mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@scribbler-l1zim.mongodb.net/test?retryWrites=true&w=majority`)
+    await mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@scribbler-l1zim.mongodb.net/test?retryWrites=true&w=majority`, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    })
 
     console.log("MongoDB Connected...");
   } catch(err) {
