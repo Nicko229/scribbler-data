@@ -8,6 +8,7 @@ const connectDB = async () => {
     await mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@scribbler-l1zim.mongodb.net/test?retryWrites=true&w=majority`, {
       useNewUrlParser: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     })
 
     console.log("MongoDB Connected...");
